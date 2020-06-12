@@ -19,6 +19,9 @@
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="/Site/index.php?action=home" role="tab"  aria-selected="true">Clients</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="/Site/index.php?action=login" role="tab"  aria-selected="true">Login</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="/Site/index.php?action=agences" role="tab"  aria-selected="false">Agences</a>
     </li>
     <li class="nav-item">
