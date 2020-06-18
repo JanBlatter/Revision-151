@@ -13,11 +13,14 @@ function CheckLogin($formL)
     $username = $formL['username'];                    // username du formulaire --> dans la variable email
 
 
-    $requete = "SELECT NomdeCompte, MotdePasse FROM users where NomdeCompte  ='$username';";      // La commande MySQL , vérifie si le de nom du compte existe
+    $requete = "SELECT NomdeCompte FROM users where NomdeCompte  ='$username';";      // La commande MySQL , vérifie si le de nom du compte existe
     $result = executeQuery($requete);
 
     if ($result) {
         $_SESSION['client'] = $formL['username'];
+
+
+
     }else{ return false;
     }
 }

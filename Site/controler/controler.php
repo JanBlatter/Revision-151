@@ -5,6 +5,8 @@
  * Date: 12.06.2020
  */
 
+require "model/userManagement.php";
+require "model/customersManagement.php";
 
 function home()
 {
@@ -15,7 +17,6 @@ function home()
 
 function login()
 {
-
     require "view/login.php";
 }
 
@@ -28,6 +29,8 @@ function agences()
 
 function clients()
 {
+    $customersResults=showCustomers();
+
 
     require "view/clients.php";
 }
@@ -52,4 +55,21 @@ function loginIsCorrect($formL){
     } else {
         login();
     }
+}
+
+function CustomersDelete()
+{
+    $customersResults= showCustomers();
+    DeleteCustomers();
+    clients();
+
+
+}
+
+
+function CustomersAdd($formAdd){
+    $customersResults= showCustomers();
+    AddCustomers();
+    clients();
+
 }

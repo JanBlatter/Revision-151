@@ -30,6 +30,14 @@ if (isset($_GET['action'])) {            /* Si action est activé , alors va sur
             break;
         case 'loginIsCorrect':
             loginIsCorrect($_POST);
+            break;
+        case'CustomersDelete':
+            CustomersDelete();
+            break;
+        case'CustomersAdd':
+            CustomersAdd($_POST);
+
+            break;
 
     }
 }
