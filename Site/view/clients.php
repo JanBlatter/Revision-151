@@ -20,8 +20,8 @@ $rows = 0; // Column count
     <b>Prénom:</b><br>
     <input type="text" name="prénom" value="" placeholder="entrer un prénom" required>
     <br>
-         <b>Prénom:</b><br>
-         <input type="text" name=ville"" value="" placeholder="entrer une ville" required>
+         <b>Ville:</b><br>
+         <input type="text" name="ville" value="" placeholder="entrer une ville" required>
     <br>
     <input type="submit" value=" Confirmer">
 </form>
@@ -37,6 +37,7 @@ $rows = 0; // Column count
             <p><strong>Prénoms : </strong><?= $result['surname']; ?></p>
             <p><strong>Villes : </strong><?= $result['city']; ?> cm</p>
             <a href="index.php?action=CustomersDelete&id=<?= $result['id']; ?>">Supprimer</a>
+            <a href="index.php?action=CustomersModify&id=<?= $result['id']; ?>">Modifier</a>
 
         </div>
 

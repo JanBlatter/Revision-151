@@ -35,6 +35,13 @@ function clients()
     require "view/clients.php";
 }
 
+function update()
+{
+
+
+    require "view/update.php";
+}
+
 
 function globales()
 {
@@ -69,7 +76,14 @@ function CustomersDelete()
 
 function CustomersAdd($formAdd){
     $customersResults= showCustomers();
-    AddCustomers();
+    AddCustomers($formAdd);
+    clients();
+
+}
+
+function CustomersModify($formMod){
+
+    ModCustomers($formMod);
     clients();
 
 }
