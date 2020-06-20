@@ -40,6 +40,18 @@ if (isset($_GET['action'])) {            /* Si action est activé , alors va sur
         case'CustomersModify':
             CustomersModify($_POST);
                 break;
+        case'logout':
+            logout();
+            break;
+        case'AgenciesAdd':
+            AgenciesAdd($_POST);
+            break;
+        case'AgentsModify':
+            AgentsModify($_POST);
+            break;
+        case'AgentsDelete':
+            AgentsDelete($_POST);
+            break;
 
     }
 }

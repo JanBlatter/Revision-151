@@ -8,7 +8,7 @@
 ob_start(); //ouvre la mémoire tampon
 $rows = 0; // Column count
 ?>
-
+<?php if (isset($_SESSION['client'])) :?>
     <h2> Liste des clients </h2>
 
      <form class="form" method="POST" action="index.php?action=CustomersAdd">
@@ -45,7 +45,7 @@ $rows = 0; // Column count
 
 
 <?php endforeach ?>
-
+<?php endif;?>
 
 <?php
 $contenu = ob_get_clean(); //efface la mémoire tampon dans la variable $content

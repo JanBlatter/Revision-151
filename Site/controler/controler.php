@@ -7,6 +7,7 @@
 
 require "model/userManagement.php";
 require "model/customersManagement.php";
+require "model/agenciesManagement.php";
 
 function home()
 {
@@ -20,9 +21,14 @@ function login()
     require "view/login.php";
 }
 
+function logout(){
+    $_SESSION = session_destroy();
+    home();
+}
+
 function agences()
 {
-
+    $AgenciesResults=showAgencies();
     require "view/agences.php";
 }
 
@@ -64,6 +70,7 @@ function loginIsCorrect($formL){
     }
 }
 
+/// CUSTOMERS ///
 function CustomersDelete()
 {
     $customersResults= showCustomers();
@@ -86,4 +93,29 @@ function CustomersModify($formMod){
     ModCustomers($formMod);
     clients();
 
+}
+
+////////
+///
+/// AGENTS ////
+
+
+function AgenciesAdd($formAgent){
+    $AgenciesResults= showAgencies();
+    AddAgencies($formAgent);
+    agences();
+
+}
+
+function AgentsModify($formAgentMod){
+
+    ModAgents($formAgentMod);
+    Agences();
+
+}
+
+function AgentsDelete(){
+    $customersResults= showCustomers();
+    DeleteAgents();
+    Agences();
 }

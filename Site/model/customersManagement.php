@@ -19,6 +19,10 @@ function showCustomerById($id){  //fonction qui affiche la personne avec un ID c
     return executeQuery($requeteCustomers);
 }
 
+function showAgentsById($id){  //fonction qui affiche la personne avec un ID ciblé
+    $requeteCustomers = "SELECT * FROM agencies WHERE id = $id";
+    return executeQuery($requeteCustomers);
+}
 
 function DeleteCustomers()   // supprime une personne
 {
@@ -59,6 +63,9 @@ function AddCustomers($formAdd)              //     Ajoute une personne
     }
 
 }
+
+
+
 
 
 

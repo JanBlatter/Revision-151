@@ -35,6 +35,9 @@
         <li class="nav-item">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="/Site/index.php?action=globales" role="tab"  aria-selected="false">Globales</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="/Site/index.php?action=logout" role="tab"  aria-selected="false">Logout</a>
+        </li>
     <?php else:?>
     <li class="nav-item">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="/Site/index.php?action=login" role="tab"  aria-selected="true">Login</a>
