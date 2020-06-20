@@ -28,7 +28,7 @@ function AddAgencies($formAgent)              //     Ajoute  un agent  // le id 
     return $result;
 }
 
-function ModAgents($formAgentMod){
+function ModAgents($formAgentMod){ //Modifie l'agent
     $id = $_GET['id'];              //chope l'id et le met dans $id
     $name = @$formAgentMod['nomUpdateAgent'];   // le @ permet de laisser vide si le champ n'est pas remplis
     if (!empty($name)){   // si name et surname sont pas remplis alors fait la requête.
@@ -50,4 +50,31 @@ function DeleteAgents()   // rend une personne inactive
     $result = executeQuery($requeteCustomers);
 
     return $result;
+}
+
+//cette requete va vérifier si le clients selectionné a une agence
+function verificationIdAgentsInAccount($id)
+{
+    $requeteCustomers = "SELECT id_agency FROM accounts where id_agency='$id';";
+    $result = executeQuery($requeteCustomers);
+
+    return $result;
+}
+
+//cette fonction sert a récupéré les information d'un client de la BD
+function ShowAgencieID($id){
+    $requeteCustomers="SELECT * FROM agencies where id='$id';";
+
+    $result=executeQuery($requeteCustomers);
+
+    return $result;
+}
+
+
+//sommes total par agences
+function amountTotalAgency($id){
+    $requeteCustomers = "SELECT SUM(amount) FROM accounts WHERE id_agency=$id;";
+    $result= executeQuery($requeteCustomers);
+
+    return $result[0][0];
 }

@@ -95,9 +95,29 @@ function CustomersModify($formMod){
 
 }
 
+function CustomersDetails($id)
+{
+
+    $tableauCustomersDetails = ShowCustomersID($id);
+
+    //cette condition va vérifier si le client a une agence
+    if (verificationCustomersAccount($id)) {
+        $tableauCustomersAttributes =  ShowCustomersID($id);
+        $tableauTotalAmountCustomer = amountTotalCustomer($id);
+        require "view/customersDetails.php";
+    } else {
+        $tableauCustomersAttributes=  ShowCustomersID($id);
+        $tableauTotalAmountCustomer = "ce client n'a pas d'argent";
+        require "view/customersDetails.php";
+    }
+
+
+}
+
 ////////
 ///
 /// AGENTS ////
+///
 
 
 function AgenciesAdd($formAgent){
@@ -118,4 +138,23 @@ function AgentsDelete(){
     $customersResults= showCustomers();
     DeleteAgents();
     Agences();
+}
+
+function agentsDetails($id)
+{
+
+    $tableauAgenciesDetails = ShowAgencieID($id);
+
+    //cette condition va vérifier si le client a une agence
+    if (verificationIdAgentsInAccount($id)) {
+        $tableauAgencyAttributes = ShowAgencieID($id);
+        $tableauTotalAmount = amountTotalAgency($id);
+        require "view/agentsDetails.php";
+    } else {
+        $tableauAgencyAttributes= ShowAgencieID($id);
+        $tableauTotalAmount = "Cette agence n'est pas disponible";
+        require "view/agentsDetails.php";
+    }
+
+
 }

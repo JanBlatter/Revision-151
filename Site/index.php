@@ -16,6 +16,9 @@ if (isset($_GET['action'])) {            /* Si action est activé , alors va sur
         case 'login':
             login();
             break;
+        case'logout':
+            logout();
+            break;
         case 'agences':
             agences();
             break;
@@ -40,8 +43,8 @@ if (isset($_GET['action'])) {            /* Si action est activé , alors va sur
         case'CustomersModify':
             CustomersModify($_POST);
                 break;
-        case'logout':
-            logout();
+        case 'CustomersDetails':
+            CustomersDetails($_GET['id']);
             break;
         case'AgenciesAdd':
             AgenciesAdd($_POST);
@@ -50,9 +53,11 @@ if (isset($_GET['action'])) {            /* Si action est activé , alors va sur
             AgentsModify($_POST);
             break;
         case'AgentsDelete':
-            AgentsDelete($_POST);
+            AgentsDelete();
             break;
-
+        case'agentsDetails':
+            agentsDetails($_GET['id']);
+            break;
     }
 }
     else {

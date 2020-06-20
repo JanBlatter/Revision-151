@@ -32,7 +32,7 @@ $rows = 0; // Column count
 
     <li>
         <div>
-            <p><strong>ID : </strong><?= $result['id']; ?></p>
+            <a href="index.php?action=CustomersDetails&id=<?= $result['id']; ?>"><?= $result['id'] ?></a>
             <p><strong>Noms : </strong><?= $result['name']; ?></p>
             <p><strong>Prénoms : </strong><?= $result['surname']; ?></p>
             <p><strong>Villes : </strong><?= $result['city']; ?> cm</p>

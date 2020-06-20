@@ -32,7 +32,7 @@ ob_start(); //ouvre la mémoire tampon
 
         <li>
             <div>
-                <p><strong>ID : </strong><?= $result['id']; ?></p>
+                <a href="index.php?action=agentsDetails&id=<?= $result['id']; ?>"><?= $result['id'] ?></a>
                 <p><strong>Noms : </strong><?= $result['name']; ?></p>
                 <p><strong>Ville : </strong><?= $result['city']; ?></p>
                 <p><strong>Statut : </strong><?= $result['active']; ?> cm</p>

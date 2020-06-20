@@ -62,6 +62,34 @@ function AddCustomers($formAdd)              //     Ajoute une personne
         require "view/update.php";
     }
 
+
+
+
+
+}
+
+//cette fonction sert a récupéré les information d'un client de la BD
+function ShowCustomersID($id){
+    $requeteCustomers="SELECT * FROM customers where id='$id';";
+
+    $result=executeQuery($requeteCustomers);
+
+    return $result;
+}
+
+
+function verificationCustomersAccount($id){
+    $requeteCustomers="SELECT id_customer FROM accounts WHERE id_customer='$id';";
+    $result=executeQuery($requeteCustomers);
+
+    return $result;
+}
+
+function amountTotalCustomer($id){
+    $requeteCustomers = "SELECT SUM(amount) FROM accounts WHERE id_customer=$id;";
+    $result = executeQuery($requeteCustomers);
+
+    return $result[0][0];
 }
 
 
